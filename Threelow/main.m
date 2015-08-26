@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
         GameController *gameDice = [GameController new];
         
         while (diceRollPrompt) {
-            NSString *currentSelection = [diceRollPrompt inputForPrompt:@"Would you like to roll, hold, release, reset or calculate?"];
+            NSString *currentSelection = [diceRollPrompt inputForPrompt:@"Would you like to roll (roll the dice), hold (choose dice to keep), release (choose held dice to release) or reset (release all dice)?"];
             
             if ([currentSelection isEqualToString:@"roll\n"]) {
                 [gameDice rollDice];
