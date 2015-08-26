@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "InputCollector.h"
 
 @interface Dice : NSObject
 
 @property (nonatomic) int currentDiceValue;
 
 - (void) singleDiceRoll;
+
+- (void) roll;
+
 
 @end

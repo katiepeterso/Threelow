@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AAD5D4211B8E2C01000D59AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5D4201B8E2C01000D59AB /* main.m */; };
 		AAD5D4291B8E2C95000D59AB /* Dice.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5D4281B8E2C95000D59AB /* Dice.m */; };
+		AAD5D42C1B8E3695000D59AB /* InputCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5D42B1B8E3695000D59AB /* InputCollector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		AAD5D4201B8E2C01000D59AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AAD5D4271B8E2C95000D59AB /* Dice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dice.h; sourceTree = "<group>"; };
 		AAD5D4281B8E2C95000D59AB /* Dice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dice.m; sourceTree = "<group>"; };
+		AAD5D42A1B8E3695000D59AB /* InputCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputCollector.h; path = ../../ContactList/ContactList/InputCollector.h; sourceTree = "<group>"; };
+		AAD5D42B1B8E3695000D59AB /* InputCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputCollector.m; path = ../../ContactList/ContactList/InputCollector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				AAD5D4201B8E2C01000D59AB /* main.m */,
 				AAD5D4271B8E2C95000D59AB /* Dice.h */,
 				AAD5D4281B8E2C95000D59AB /* Dice.m */,
+				AAD5D42A1B8E3695000D59AB /* InputCollector.h */,
+				AAD5D42B1B8E3695000D59AB /* InputCollector.m */,
 			);
 			path = Threelow;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAD5D42C1B8E3695000D59AB /* InputCollector.m in Sources */,
 				AAD5D4291B8E2C95000D59AB /* Dice.m in Sources */,
 				AAD5D4211B8E2C01000D59AB /* main.m in Sources */,
 			);
