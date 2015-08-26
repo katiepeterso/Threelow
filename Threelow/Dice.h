@@ -8,14 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "InputCollector.h"
+#import "GameController.h"
 
 @interface Dice : NSObject
 
 @property (nonatomic) int currentDiceValue;
 
 - (void) singleDiceRoll;
-
-- (void) roll;
 
 
 @end
