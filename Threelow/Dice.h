@@ -13,8 +13,9 @@
 @interface Dice : NSObject
 
 @property (nonatomic) int currentDiceValue;
+@property (nonatomic) NSArray *diceSymbols;
+@property (nonatomic) NSString *currentDiceSymbol;
 
 - (void) singleDiceRoll;
-
 
 @end

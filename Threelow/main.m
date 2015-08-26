@@ -20,13 +20,18 @@ int main(int argc, const char * argv[]) {
             NSString *currentSelection = [diceRollPrompt inputForPrompt:@"Would you like to roll, hold, release or calculate?"];
             
             if ([currentSelection isEqualToString:@"roll\n"]) {
-                [gameDice rollAllDice];
+                [gameDice rollDice];
             }
             
             else if ([currentSelection isEqualToString:@"hold\n"]) {
                 NSString *holdDiceIndices = [diceRollPrompt inputForPrompt:@"Please enter the index of each die you would like to hold, separated by a comma."];
-//                [gameDice holdDie:holdDiceIndices];
+                [gameDice holdOrRelease:@"hold\n" whichDice:holdDiceIndices];
             }
+            else if ([currentSelection isEqualToString:@"release\n"]) {
+                NSString *releaseDiceIndices = [diceRollPrompt inputForPrompt:@"Please enter the index of each die you would like to release, separated by a comma."];
+                [gameDice holdOrRelease:@"release\n" whichDice:releaseDiceIndices];
+            }
+
         }
     }
     return 0;

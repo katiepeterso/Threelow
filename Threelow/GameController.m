@@ -11,17 +11,25 @@
 
 @implementation GameController
 
-- (void) rollAllDice {
-    self.allDice = [NSMutableArray array];
-    
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.heldDice = [NSMutableArray array];
+        self.allDice = [NSMutableArray array];
+    }
+    return self;
+}
+
+- (void) rollDice {
+    int howManyToRoll = 5-self.heldDice.count;
     int i = 1;
-    for (; i <= 5; i++) {
+    for (; i <= howManyToRoll; i++) {
         Dice *dice = [Dice new];
         [dice singleDiceRoll];
         [self.allDice addObject:dice];
+        NSLog(@"You rolled %@",((Dice*)self.allDice[i-1]).currentDiceSymbol);
     }
-    
-    NSLog(@"The 5 dice values are %d, %d, %d, %d, %d", ((Dice*)self.allDice[0]).currentDiceValue, ((Dice *)self.allDice[1]).currentDiceValue, ((Dice*)self.allDice[2]).currentDiceValue, ((Dice *)self.allDice[3]).currentDiceValue, ((Dice*)self.allDice[4]).currentDiceValue);
 }
 
 
@@ -34,11 +42,16 @@
             int number = [index intValue];
             [self.heldDice addObject:self.allDice[number]];
         }
+        for (Dice *eachDie in self.heldDice) {
+            NSLog(@"Held die: %@", eachDie.currentDiceSymbol);
+        }
+        
     }
     else if ([selection isEqualToString:@"release\n"]) {
         for (NSString *index in indexArray) {
             int number = [index intValue];
-            [self.heldDice addObject:self.allDice[number]];
+            NSLog(@"Released die: %@", ((Dice*)self.heldDice[number]).currentDiceSymbol);
+            [self.heldDice removeObjectAtIndex:number];
         }
     }
 }

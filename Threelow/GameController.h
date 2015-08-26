@@ -13,7 +13,7 @@
 @property (nonatomic) NSMutableArray *allDice;
 @property (nonatomic) NSMutableArray *heldDice;
 
-- (void) rollAllDice;
+- (void) rollDice;
 
 - (void) holdOrRelease: (NSString *) selection whichDice:(NSString *) diceIndices;
 
