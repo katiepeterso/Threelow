@@ -21,9 +21,13 @@
     return self;
 }
 
+
 - (void) rollDice {
+    
+    [self.allDice removeAllObjects];
     int howManyToRoll = 5-self.heldDice.count;
     int i = 1;
+    
     for (; i <= howManyToRoll; i++) {
         Dice *dice = [Dice new];
         [dice singleDiceRoll];
@@ -45,7 +49,6 @@
         for (Dice *eachDie in self.heldDice) {
             NSLog(@"Held die: %@", eachDie.currentDiceSymbol);
         }
-        
     }
     else if ([selection isEqualToString:@"release\n"]) {
         for (NSString *index in indexArray) {
@@ -54,6 +57,20 @@
             [self.heldDice removeObjectAtIndex:number];
         }
     }
+    
+    int currentScore = 0;
+    for (Dice *eachDie in self.heldDice) {
+        if (eachDie.currentDiceValue != 3) {
+            currentScore = currentScore + eachDie.currentDiceValue;
+        }
+    }
+    NSLog(@"Current score: %i", currentScore);
+}
+
+
+- (void) resetAll {
+    [self.heldDice removeAllObjects];
+    [self.allDice removeAllObjects];
 }
 
 @end

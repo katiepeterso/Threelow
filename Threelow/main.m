@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
         GameController *gameDice = [GameController new];
         
         while (diceRollPrompt) {
-            NSString *currentSelection = [diceRollPrompt inputForPrompt:@"Would you like to roll, hold, release or calculate?"];
+            NSString *currentSelection = [diceRollPrompt inputForPrompt:@"Would you like to roll, hold, release, reset or calculate?"];
             
             if ([currentSelection isEqualToString:@"roll\n"]) {
                 [gameDice rollDice];
@@ -30,6 +30,9 @@ int main(int argc, const char * argv[]) {
             else if ([currentSelection isEqualToString:@"release\n"]) {
                 NSString *releaseDiceIndices = [diceRollPrompt inputForPrompt:@"Please enter the index of each die you would like to release, separated by a comma."];
                 [gameDice holdOrRelease:@"release\n" whichDice:releaseDiceIndices];
+            }
+            else if([currentSelection isEqualToString:@"reset\n"]) {
+                [gameDice resetAll];
             }
 
         }

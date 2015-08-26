@@ -17,4 +17,6 @@
 
 - (void) holdOrRelease: (NSString *) selection whichDice:(NSString *) diceIndices;
 
+- (void) resetAll;
+
 @end
