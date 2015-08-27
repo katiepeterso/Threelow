@@ -25,6 +25,7 @@
 - (void) rollDice {
     
     [self.allDice removeAllObjects];
+    InputCollector *diceRollPrompt = [InputCollector new];
     int howManyToRoll = 5-self.heldDice.count;
     int i = 1;
     
@@ -33,6 +34,13 @@
         [dice singleDiceRoll];
         [self.allDice addObject:dice];
         NSLog(@"You rolled %@",((Dice*)self.allDice[i-1]).currentDiceSymbol);
+    }
+    if (howManyToRoll == 1) {
+        [self holdOrRelease:@"hold\n" whichDice:@"0\n"];
+    }
+    else {
+    NSString *holdDiceIndices = [diceRollPrompt inputForPrompt:@"Please enter the index of each die you would like to hold, separated by a comma."];
+    [self holdOrRelease:@"hold\n" whichDice:holdDiceIndices];
     }
 }
 
